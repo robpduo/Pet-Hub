@@ -98,8 +98,28 @@ router.put('/:id', (req, res) => {
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
-    })
-})
+    });
+});
 
+router.delete('/:id', (req, res) => {
+    Pet.destroy(
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+    .then(dbPetData => {
+        if(!dbPetData) {
+            res.status(404).json({ message: 'No pet found with this id!'});
+            return;
+        }
+        res.json(dbPetData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 module.exports = router;
