@@ -22,14 +22,28 @@ Pet.init(
         gender: {
             type: DataTypes.CHAR,
             validate: {
-                //validate to only accept M or F as response
+                isIn: [['M', 'F']]//validate to only accept M or F as response
             }
         },
         bread: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [2]
+                len: [4] //at least four characters long
+            }
+        },
+        picture_url: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                isUrl: true
+            }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
             }
         }
     },

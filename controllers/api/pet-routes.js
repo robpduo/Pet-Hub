@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
             'name',
             'gender',
             'age',
-            'bread'
+            'bread',
+            'picture_url'
         ]
     })
         .then(dbPetData => res.json(dbPetData))
