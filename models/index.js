@@ -1,5 +1,7 @@
+// import all models
+const User = require('./User');
+
 const Pet = require('./Pets');
 
-// Associations Below
+module.exports = { User, Pet };
 
-module.exports = { Pet }
