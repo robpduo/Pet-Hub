@@ -1,5 +1,7 @@
 // import all models
 const User = require('./User');
 
+const Pet = require('./Pets');
 
-module.exports = { User };
+module.exports = { User, Pet };
+
