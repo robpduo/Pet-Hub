@@ -22,8 +22,7 @@ Pet.init(
         gender: {
             type: DataTypes.CHAR,
             validate: {
-                is: [F-M], //need to refactor to validate for either M or F
-                len: [1, 1] // validate of inpu is length 1 to 1
+                //validate to only accept M or F as response
             }
         }
     },

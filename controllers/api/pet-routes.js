@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Pet } = require('../../models');
 
+// retrieve all pets
 router.get('/', (req, res) => {
     Pet.findAll({
         attributes: [
@@ -8,7 +9,6 @@ router.get('/', (req, res) => {
             'name',
             'gender',
             'age',
-            'created_at'
         ]
     })
         .then(dbPetData => res.json(dbPetData))
