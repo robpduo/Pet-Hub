@@ -18,4 +18,29 @@ router.get('/', (req, res) => {
         });
 });
 
+router.get('/:id', (req, res) => {
+    Pet.findOne({
+        attributes: [
+            'id',
+            'name',
+            'gender',
+            'age',
+        ],
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbPetData => {
+            if(!dbPetData) {
+                res.status(404).json({ message: 'No pet found with this id' });
+                return;
+            }
+            res.json(dbPetData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 module.exports = router;
