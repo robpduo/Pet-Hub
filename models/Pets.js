@@ -24,12 +24,20 @@ Pet.init(
             validate: {
                 //validate to only accept M or F as response
             }
+        },
+        bread: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [2]
+            }
         }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
+        underscored: true,
         modelName: 'pet'
     }
 );

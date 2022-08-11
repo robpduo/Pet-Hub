@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
             'name',
             'gender',
             'age',
+            'bread'
         ]
     })
         .then(dbPetData => res.json(dbPetData))
@@ -25,6 +26,7 @@ router.get('/:id', (req, res) => {
             'name',
             'gender',
             'age',
+            'bread'
         ],
         where: {
             id: req.params.id
