@@ -11,7 +11,8 @@ router.get('/', (req, res) => {
       attributes: [
         'id',
         'username',
-        'email'
+        'email',
+        'image'
       ]
     })
       .then(dbPostData => {

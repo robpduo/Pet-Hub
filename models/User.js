@@ -40,6 +40,9 @@ User.init(
         validate: {
             len: [4]
         }
+    },
+    image: {
+        type: DataTypes.STRING
     }
   },
   {
