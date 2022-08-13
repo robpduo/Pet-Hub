@@ -206,6 +206,11 @@ span {
     width: 100%;
 }
 
+.image-class {
+    color: var(--secondary);
+    font-size: 50%;
+}
+
 .text {
     padding: 5px 12px;
 }
