@@ -12,3 +12,4 @@ npm i bcrypt connect-session-sequelize dotenv express express-handlebars express
 ## Links
 heroku https://pets-project2.herokuapp.com/
 
+npm 
