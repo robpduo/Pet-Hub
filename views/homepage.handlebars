@@ -1,20 +1,14 @@
-<ol class="">
+<ol class="item-list">
     {{#each posts as |post|}}  
     <li>
-       <article class="">
-            <div class="">
-                <div class="">
-                    <h1>Email {{email}}</h1>
+       <article class="item">
+            <div class="item-section">
+                <div class="item-content">
+                    <img src="{{image}}" width="100px" height="100px" class="profile-avatar">
+                    <h1 class="item-title">Email {{email}}</h1>
                     <span>Username <b>{{username}}</b></span>
-                    <img src="{{image}}" width="10%" height="20%" class="profile-avatar">
-                    <form>
-                        <label for="password-login">Password:</label>
-                        <input type="file" id="password-login" />
-                    </form>
+                    <h2>id {{id}}</h2>
                 </div>
-            </div>
-            <div>
-                <h2>id {{id}}</h2>
             </div>
         </article>
     </li>

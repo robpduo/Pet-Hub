@@ -41,6 +41,10 @@ User.init(
             len: [4]
         }
     },
+    city:{
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     image: {
         type: DataTypes.STRING
     }
