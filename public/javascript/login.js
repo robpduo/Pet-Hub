@@ -19,7 +19,7 @@ async function loginFormHandler(event) {
             //console.log('success')
             document.location.replace('/dashboard/');
         } else {
-            alert(response.statusText);
+            alert(response.statusText + 'Please give proper files format to upload jpg|jpeg|png|gif');
         }
     }
 }
