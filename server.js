@@ -35,6 +35,9 @@ app.use(express.urlencoded({ extended: true }));
 //This is useful for front-end specific files like images, style sheets, and JavaScript files.
 app.use(express.static(path.join(__dirname, 'public')));
 
+//static avatars folder
+app.use('/avatars', express.static('./avatars'));
+
 // turn on routes
 app.use(routes);
 
