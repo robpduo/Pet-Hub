@@ -7,7 +7,7 @@
 
 ## Development
 ### Installs
-npm i express
+npm i bcrypt connect-session-sequelize dotenv express express-handlebars express-session multer mysql2 sequelize
 
 ## Links
 heroku https://pets-project2.herokuapp.com/
