@@ -7,4 +7,4 @@
 
 ## Development
 ### Installs
-npm i express
+npm i bcrypt connect-session-sequelize dotenv express express-handlebars express-session multer mysql2 sequelize
