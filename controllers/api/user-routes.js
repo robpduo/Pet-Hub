@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Pet } = require('../../models');
 
 //image upload
 const multer = require('multer');

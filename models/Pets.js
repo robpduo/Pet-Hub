@@ -15,6 +15,13 @@ Pet.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        pet_type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1] //at least one characters long
+            }
+        },
         age: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -23,13 +30,6 @@ Pet.init(
             type: DataTypes.CHAR,
             validate: {
                 isIn: [['M', 'F']]//validate to only accept M or F as response
-            }
-        },
-        bread: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [4] //at least four characters long
             }
         },
         picture_url: {
@@ -49,7 +49,6 @@ Pet.init(
     },
     {
         sequelize,
-        timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'pet'
