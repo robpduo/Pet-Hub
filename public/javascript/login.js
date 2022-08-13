@@ -17,9 +17,9 @@ async function loginFormHandler(event) {
         });
         if (response.ok) {
             //console.log('success')
-            document.location.replace('/dashboard/');
+            document.location.replace('/');
         } else {
-            alert(response.statusText + 'Please give proper files format to upload jpg|jpeg|png|gif');
+            alert(response.statusText);
         }
     }
 }
@@ -54,7 +54,7 @@ async function signupFormHandler(event) {
             console.log('success');
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            alert(response.statusText  + 'Please give proper files format to upload jpg|jpeg|png|gif');
         }
     }
 }
