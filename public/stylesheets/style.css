@@ -30,8 +30,9 @@ a:hover {
 
 .nav-title {
     text-decoration: none;
-    color: rgb(222, 247, 222);
+    color: rgb(59, 59, 81);
     margin: 0 10px ;
+    text-shadow: 1px 1px #00cec9;
 }
 
 .home-title{
@@ -139,9 +140,17 @@ header{
     align-items: center;
     padding: 1.5%;
     font-family: "Staatliches", sans-serif;
-    background-image: linear-gradient(to bottom right, rgb(147, 147, 248) , black);
+    background-image: url('/images/paws.png');
+    background-size: cover;
+    position: -webkit-sticky;
+    /* "stick" the header */
+    position: sticky;
+    top: 0;
+    background-position: 80%;
+    /*keep this element on top of all the other ones */
+    z-index: 9999;
 }
-
+/*linear-gradient(to bottom right, rgb(147, 147, 248) , black);*/
 header h1 {
     font-size: 1.3em;
     color: black;
@@ -204,6 +213,11 @@ span {
 }
 .item-title{
     width: 100%;
+}
+
+.image-class {
+    color: var(--secondary);
+    font-size: 50%;
 }
 
 .text {
