@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Pet, User } = require('../../models');
+const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
 
 // retrieve all pets
 router.get('/', (req, res) => {
@@ -7,15 +9,15 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'name',
+            'pet_type',
             'gender',
             'age',
-            'bread',
             'picture_url'
         ],
         include: [
             {
-                modle: User,
-                attributes: ['id', 'username', 'email']
+                model: User,
+                attributes: ['username','city']
             }
         ]
     })
@@ -31,14 +33,14 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'name',
-            'gender',
+            'pet_type',
             'age',
             'bread'
         ],
         include: [
             {
-                modle: User,
-                attributes: ['id', 'username', 'email']
+                model: User,
+                attributes: ['username','city']
             }
         ],
         where: {
@@ -59,14 +61,14 @@ router.get('/:id', (req, res) => {
 });
 
 // create a new pet, under the current user session
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Pet.create(
         {
             name: req.body.name,
             picture_url: req.body.picture_url,
             age: req.body.age,
+            pet_type: req.body.pet_type,
             gender: req.body.gender,
-            bread: req.body.bread,
             user_id: req.session.user_id // user id taken from user session
         }
     )
@@ -82,9 +84,10 @@ router.put('/:id', (req, res) => {
         {
             name: req.body.name,
             picture_url: req.body.picture_url,
+            pet_type: req.body.pet_type,
             age: req.body.age,
             gender: req.body.gender,
-            bread: req.body.bread,
+            
         }
     )
     .then(dbPetData => {
