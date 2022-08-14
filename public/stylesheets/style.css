@@ -103,7 +103,7 @@ form label {
     display: block;
 }
 
-.login-form, .signup-form, .comment-form, .new-post-form, .edit-post-form{
+.login-form, .signup-form, .pet-form, .new-post-form, .edit-post-form{
     margin: 2% 20%;
     align-content: center;
     padding: 10px;
@@ -171,12 +171,13 @@ main {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: rgb(222, 247, 222);
+    color: rgb(59, 59, 81);
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
     font-family: "Staatliches", sans-serif;
+    text-shadow: 1px 1px #00cec9;
 }
 
 .btn-no-style:hover {

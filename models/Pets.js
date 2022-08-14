@@ -34,10 +34,6 @@ Pet.init(
         },
         picture_url: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                isUrl: true
-            }
         },
         user_id: {
             type: DataTypes.INTEGER,

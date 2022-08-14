@@ -18,10 +18,13 @@
         </h1>
         <nav>
             {{#if loggedIn}}
-            <a href="/dashboard" class="nav-title">Dashboard</a>
+            
             <a href="/" class="nav-title">Home</a>
             <a href="/pets" class="nav-title">create pets</a>
             <button id="logout" class="btn-no-style">Logout</button>
+            <a href="/dashboard" class="nav-title">
+            <img src="{{image}}" width="30px" height="30px" class="profile-avatar">
+            </a>
             {{else}}
             <a href="/login" class="nav-title">Login</a>
             <a href="/signup" class="nav-title">Register</a>

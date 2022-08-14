@@ -4,11 +4,11 @@
         <input type="text" id="pet-name" />
     </div>
     <div>
-        <label for="pet-type">pet_type:</label>
+        <label for="pet-type">Pet type:</label>
         <input type="text" id="pet-type" />
     </div>
     <div>
-        <label for="pet-age">age:</label>
+        <label for="pet-age">Age:</label>
         <input type="text" id="pet-age" />
     </div>
     <div>
@@ -18,12 +18,16 @@
             <option value="M">M</option>
         </select>
     </div>
-    <div>
-        <label for="pet-picture-url">picture</label>
+    {{!-- <div>
+        <label for="pet-picture-url">Picture</label>
         <input type="text" id="pet-picture-url"/>
+    </div> --}}
+    <div>
+        <label for="image-signup">Profile Picture: <span class="image-class"><br>( jpg-jpeg-png-gif )</span></label>
+        <input type="file" id="image-signup" name="image"/>
     </div>
     <div>
-        <button type="submit">Signup</button>
+        <button type="submit">Create</button>
     </div>
 </form>
 

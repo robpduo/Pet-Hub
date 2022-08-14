@@ -6,23 +6,28 @@ const { route } = require('./api');
 
 //send response using render to use a template engine
 router.get('/', (req, res) => {
-    console.log(req.session)
-    User.findAll({
-      attributes: [
-        'image',
-        'id',
-        'username',
-        'email',
-        'city',
-        [sequelize.literal('(Select COUNT (*) FROM pet WHERE user.id = pet.user_id)'),'pet_number']
-      ]
+    Pet.findAll({
+        attributes: [
+            'name',
+            'picture_url',
+            'age',
+            'pet_type'
+        ],
+        include:[
+            {
+                model: User,
+                attributes: ['username','city']
+            }
+        ]
     })
       .then(dbPostData => {
         //serialize the object down to only the properties you need .get({ plain: true}))
         const posts = dbPostData.map(post => post.get({plain: true})); 
+        console.log(req.session.image)
         res.render('homepage', {
             posts,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            image: req.session.image
         });
       })
       .catch(err => {
@@ -35,7 +40,9 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
     //if login redirect to a specific page
     if (req.session.loggedIn) {
-        res.redirect('/dashboard');
+        res.redirect('/dashboard',{
+            image: req.session.image
+        });
         return;
     }
     res.render('login');
@@ -44,7 +51,9 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     //if login redirect to a specific page
     if (req.session.loggedIn) {
-        res.redirect('/dashboard');
+        res.redirect('/dashboard',{
+            image: req.session.image
+        });;
         return;
     }
     res.render('signup');
@@ -58,7 +67,8 @@ router.get('/pets', (req, res) => {
         return;
     }
     res.render('pets-create', {
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        image: req.session.image        
     });
 });
 

@@ -21,7 +21,6 @@ async function signupFormHandler(event) {
         
         const response = await fetch('/api/users/test', {
             method: 'POST',
-            body: image,
             body: formData
         })
         if(response.ok){
