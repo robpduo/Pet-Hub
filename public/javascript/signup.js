@@ -19,7 +19,7 @@ async function signupFormHandler(event) {
     //await fetch('/api/users', { //assign the result into a variable
     if (username && email && password) {
         
-        const response = await fetch('/api/users/test', {
+        const response = await fetch('/api/users', {
             method: 'POST',
             body: formData
         })
