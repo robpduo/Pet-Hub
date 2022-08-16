@@ -136,7 +136,9 @@ router.post('/login',  (req, res) => {
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
             req.session.image = dbUserData.image;;
-
+            console.log(dbUserData.image)
+            console.log(req.session.image)
+            
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
     })

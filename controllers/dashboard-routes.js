@@ -29,7 +29,12 @@ router.get('/', withAuth, (req, res) => {
         .then(dbPostData => {
             //serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { posts, loggedIn: true, image: req.session.image });
+            res.render('dashboard', { 
+                posts, 
+                loggedIn: true, 
+                image: req.session.image,
+                username: req.session.username
+             });
         })
         .catch(err => {
             console.log(err);
@@ -54,11 +59,12 @@ router.get('/edit/:id', withAuth, (req, res) => {
         .then(dbPostData => {
             if (dbPostData) {
                 const petCard = dbPostData.get({ plain: true });
-
+                console.log(petCard)
                 res.render('edit-pet', {
                     petCard,
                     loggedIn: true,
-                    image: req.session.image
+                    image: req.session.image,
+                    username: req.session.username
                 });
             }
         })

@@ -36,8 +36,9 @@ router.get('/:id', (req, res) => {
             'id',
             'name',
             'pet_type',
+            'gender',
             'age',
-            'bread'
+            'picture_url'
         ],
         include: [
             {
@@ -85,10 +86,11 @@ router.put('/:id', withAuth, upload.single('picture_url'), (req, res) => {
     Pet.update(
         {
             name: req.body.name,
-            picture_url: req.body.picture_url,
-            pet_type: req.body.pet_type,
+            picture_url: req.file.path,
             age: req.body.age,
+            pet_type: req.body.pet_type,
             gender: req.body.gender,
+            user_id: req.session.user_id 
         },
         {
             where: {
