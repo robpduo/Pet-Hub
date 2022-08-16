@@ -1,14 +1,8 @@
 <ol class="item-list">
     <h2>Community Pets</h2>
     {{#each posts as |post|}}
-    <li>
-        <article class="item">
-            <div class="item-section">
-                <div class="item-content">
-                    {{> pet-info post}}
-                </div>
-            </div>
-        </article>
-    </li>
+
+        {{> pet-info post}}
+
     {{/each}}
 </ol>

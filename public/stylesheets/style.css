@@ -186,12 +186,7 @@ main {
 }
 
 .item {
-    line-height: 150%;
     margin: 5px;
-    border: 2px solid black;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-  
 }
 
 .item .item-section {
@@ -205,6 +200,9 @@ span {
 
 .item-section {
     background-color: var(--tertiary);
+    border: 2px solid black;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .item-content {
