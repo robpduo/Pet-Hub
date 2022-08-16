@@ -1,8 +1,15 @@
 <ol class="item-list">
-    {{#each posts as |post|}}  
+    <h2>Your Pets!</h2>
+    {{#each posts as |post|}}
     <li>
-        <h2>Your Pets!</h2>
-        {{> pet-info post}}
+        <article class="item">
+            <div class="item-section">
+                <div class="item-content">
+                    {{> pet-info post}}
+                    <a href="/dashboard/edit/{{post.id}}">Edit</a>
+                </div>
+            </div>
+        </article>
     </li>
     {{/each}}
 </ol>

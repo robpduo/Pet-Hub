@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username','city']
+                attributes: ['username', 'city']
             }
         ]
     })
@@ -42,7 +42,7 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username','city']
+                attributes: ['username', 'city']
             }
         ],
         where: {
@@ -81,7 +81,7 @@ router.post('/', withAuth, upload.single('picture_url'), (req, res) => {
         });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, upload.single('picture_url'), (req, res) => {
     Pet.update(
         {
             name: req.body.name,
@@ -89,21 +89,25 @@ router.put('/:id', (req, res) => {
             pet_type: req.body.pet_type,
             age: req.body.age,
             gender: req.body.gender,
-            
+        },
+        {
+            where: {
+                id: req.params.id
+            }
         }
     )
-    .then(dbPetData => {
-        if(!dbPetData) {
-            res.status(404).json({ message: 'No pets found with this id!'});
-            return;
-        }
+        .then(dbPetData => {
+            if (!dbPetData) {
+                res.status(404).json({ message: 'No pets found with this id!' });
+                return;
+            }
 
-        res.json(dbPetData)
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+            res.json(dbPetData)
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.delete('/:id', (req, res) => {
@@ -114,17 +118,17 @@ router.delete('/:id', (req, res) => {
             }
         }
     )
-    .then(dbPetData => {
-        if(!dbPetData) {
-            res.status(404).json({ message: 'No pet found with this id!'});
-            return;
-        }
-        res.json(dbPetData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbPetData => {
+            if (!dbPetData) {
+                res.status(404).json({ message: 'No pet found with this id!' });
+                return;
+            }
+            res.json(dbPetData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
