@@ -1,17 +1,5 @@
 <article class="item">
     <div class="item-section">
-        {{#if loggedIn}}
-        <a>
-            <div class="item-content">
-                <img src="{{picture_url}}" width="100px" height="100px" class="profile-avatar">
-                <h1 class="item-title">Name: {{name}} </h1>
-                <span>{{pet_type}}</span>
-                <h2>Age: <b>{{age}}</b></h2>
-                <span>City: <b>{{user.city}}</b></span>
-                <span>Owner: <b>{{user.username}}</b></span>
-            </div>
-        </a>
-        {{else}}
         <div class="item-content">
             <img src="{{picture_url}}" width="100px" height="100px" class="profile-avatar">
             <h1 class="item-title">Name: {{name}} </h1>
@@ -20,6 +8,5 @@
             <span>City: <b>{{user.city}}</b></span>
             <span>Owner: <b>{{user.username}}</b></span>
         </div>
-        {{/if}}
     </div>
 </article>
