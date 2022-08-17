@@ -5,6 +5,10 @@
   <br>
 </h1>
 
+## About
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 ## Credit
 
 * Rob
@@ -13,10 +17,9 @@
 * Leo
 
 ## Development
-### Installs
-npm i bcrypt connect-session-sequelize dotenv express express-handlebars express-session multer mysql2 sequelize
+
+`npm i bcrypt connect-session-sequelize dotenv express express-handlebars express-session multer mysql2 sequelize`
 
 ## Links
-heroku https://pets-projects.herokuapp.com/
 
-npm 
+Heroku: https://pets-projects.herokuapp.com/
