@@ -272,6 +272,16 @@ footer {
     flex-grow: 1;
   }
   
+  #placesList li {
+    background-color: #f1f1f1;
+    padding: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
   #more {
     background-color: #f1f1f1;
     padding: 10px;
@@ -279,5 +289,24 @@ footer {
     white-space: nowrap;
     font-size: 1.25rem;
     cursor: pointer;
+  }
+
+  .mapdesc {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .map-btns {
+    border: #333 solid;
+    margin: 10px 0 10px 0;
+    font-size: 1.2rem;
+    color: #246fcb;
+    border-radius: 15px;
+    background-color: rgb(238, 230, 230);
+  }
+
+  i {
+    margin-left: 5px;
+    color: #246fcb;
   }
   
