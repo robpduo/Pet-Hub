@@ -97,7 +97,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
                     userData,
                     userId: req.session.user_id,
                     loggedIn: true,
-                    image: req.session.image,
+                    image: "../"+req.session.image,
                     username: req.session.username
                 })
             }
