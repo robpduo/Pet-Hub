@@ -59,7 +59,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         .then(dbPostData => {
             if (dbPostData) {
                 const petCard = dbPostData.get({ plain: true });
-                console.log(petCard)
+                
                 res.render('edit-pet', {
                     petCard,
                     loggedIn: true,

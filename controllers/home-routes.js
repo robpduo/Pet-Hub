@@ -84,15 +84,15 @@ router.get('/edit/:id', withAuth, (req, res) => {
             'username',
             'email',
             'password',
-            'cty',
+            'city',
             'image'
         ]
     })
         .then(dbUserData => {
             if (dbUserData) {
                 const userData = dbUserData.get({ plain: true });
-                console.log(userData);
-                res.render('edit-pet', {
+
+                res.render('edit-user', {
                     userData,
                     loggedIn: true,
                     image: req.session.image,

@@ -1,24 +1,22 @@
 <div>
     <form class="edit-post-form">
-        <input type="file" id="image-signup" name="image" />
-
         <div style="display: flex; flex-direction: row">
             <label for="user-username">Username:</label>
-            <input name="user-username" type="text" id="user-username" value="{{name}}" />
+            <input name="user-username" type="text" id="user-username" value="{{userData.username}}" />
         </div>
 
         <div style="display: flex; flex-direction: row">
             <label for="user-email">Email:</label>
-            <input name="user-email" type="text" id="user-email" value="{{pet_type}}" />
+            <input name="user-email" type="text" id="user-email" value="{{userData.email}}" />
         </div>
 
         <div style="display: flex; flex-direction: row">
-            <label for="user-password">Pet Age:</label>
-            <input name="user-password" type="number" id="user-password" value="{{age}}" />
+            <label for="user-password">Password:</label>
+            <input name="user-password" type="text" id="user-password" />
         </div>
 
+        <input type="file" id="image-signup" name="image" />
         <button type="submit">Update</button>
-
         <button type="button" class="delete-pet-btn">Delete</button>
     </form>
 </div>
