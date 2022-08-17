@@ -2,8 +2,7 @@
     box-sizing: border-box;
     margin: 0%;
 }
-:root {
-    --primary: #c7ebf1;
+:root {    --primary: #e2e2e2;
     --secondary: #f3f7f8;
     --tertiary: white;
 }
@@ -30,9 +29,10 @@ a:hover {
 
 .nav-title {
     text-decoration: none;
-    color: rgb(59, 59, 81);
+    color: rgb(36, 41, 46);
+    font-size: x-large;
     margin: 0 10px ;
-    text-shadow: 1px 1px #00cec9;
+    /* text-shadow: 1px 1px #00cec9; */
 }
 
 .home-title{
@@ -109,7 +109,7 @@ form label {
     padding: 10px;
     font-weight: bold;
     background-color: #000000ba;
-    color: rgb(200, 206, 200);
+    color: rgb(253, 253, 253);
     border-radius: 10px;
 
 }
@@ -140,7 +140,8 @@ header{
     align-items: center;
     padding: 1.5%;
     font-family: "Staatliches", sans-serif;
-    background-image: url('/images/paws.png');
+    background-color: var(--secondary);
+    /* background-image: url('/images/paws.png'); */
     background-size: cover;
     position: -webkit-sticky;
     /* "stick" the header */
@@ -171,13 +172,13 @@ main {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: rgb(59, 59, 81);
-    font-size: 100%;
+    color: rgb(36, 41, 46);
+    font-size: x-large;
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
     font-family: "Staatliches", sans-serif;
-    text-shadow: 1px 1px #00cec9;
+    /* text-shadow: 1px 1px #00cec9; */
 }
 
 .btn-no-style:hover {
@@ -242,3 +243,41 @@ footer {
     font-size: 70%;
     font-style: italic;
 }
+
+#sidebar {
+    flex-basis: 5rem;
+    flex-grow: 1;
+    padding: 1rem;
+    max-width: 30rem;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+  
+  #map {
+    height: 600px;
+    width: 100%;
+  }
+  
+  #sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #placesList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    flex-grow: 1;
+  }
+  
+  #more {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
