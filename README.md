@@ -14,6 +14,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - Allow ways for Users to interact with one another, such as host meet ups, comment on other user's dogs
 
 ## Usages
+Navigation Bar </br>
+![image](https://user-images.githubusercontent.com/101683611/185191834-a10fb73f-e9dc-4489-b00e-8134233430a8.png)
+- Click on the PetHub icon to go back to the home page to view all pets
+- Click on the Login button to login to your account and view your pets
+- Click on Register to sign-up with a new account
+- Click on the PetMap to view a map of pet related places in your local area 
+
+Login Page </br>
+![image](https://user-images.githubusercontent.com/101683611/185191762-09254714-e440-4389-ae2a-65811d61b1d9.png)
+
 Pet Maps</br>
 ![image](https://user-images.githubusercontent.com/101683611/185190347-c12084cd-605f-4ea7-a6c7-e756e7da2adc.png)
 - Users can click on locations within the results side bar, and the map will center its location based on the selection
