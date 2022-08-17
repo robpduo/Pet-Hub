@@ -1,46 +1,48 @@
 const router = require('express').Router();
 //adding models and sequelize
 const sequelize = require('../config/connection');
-const { User , Pet} = require('../models');
-const { route } = require('./api');
+const { User, Pet } = require('../models');
+const withAuth = require('../utils/auth');
 
 //send response using render to use a template engine
 router.get('/', (req, res) => {
     Pet.findAll({
         attributes: [
+            'id',
             'name',
             'picture_url',
             'age',
             'pet_type'
         ],
-        include:[
+        include: [
             {
                 model: User,
-                attributes: ['username','city']
+                attributes: ['username', 'city']
             }
         ]
     })
-      .then(dbPostData => {
-        //serialize the object down to only the properties you need .get({ plain: true}))
-        const posts = dbPostData.map(post => post.get({plain: true})); 
-        console.log(req.session.image)
-        res.render('homepage', {
-            posts,
-            loggedIn: req.session.loggedIn,
-            image: req.session.image
+        .then(dbPostData => {
+            //serialize the object down to only the properties you need .get({ plain: true}))
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            console.log(posts);
+            res.render('homepage', {
+                posts,
+                userId: req.session.user_id,
+                loggedIn: req.session.loggedIn,
+                image: req.session.image
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
 });
 
 //login route
 router.get('/login', (req, res) => {
     //if login redirect to a specific page
     if (req.session.loggedIn) {
-        res.redirect('/dashboard',{
+        res.redirect('/dashboard', {
             image: req.session.image
         });
         return;
@@ -51,7 +53,7 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     //if login redirect to a specific page
     if (req.session.loggedIn) {
-        res.redirect('/dashboard',{
+        res.redirect('/dashboard', {
             image: req.session.image
         });;
         return;
@@ -60,16 +62,50 @@ router.get('/signup', (req, res) => {
 });
 
 //login route
-router.get('/pets', (req, res) => {
+router.get('/pets', withAuth, (req, res) => {
     //if login redirect to a specific page
     if (!req.session.loggedIn) {
         res.redirect('/login')
         return;
     }
     res.render('pets-create', {
+        userId: req.session.user_id,
         loggedIn: req.session.loggedIn,
-        image: req.session.image        
+        image: req.session.image
     });
 });
+
+router.get('/edit/:id', withAuth, (req, res) => {
+    User.findByPk(req.params.id, {
+        where: {
+            user_id: req.session.user_id
+        },
+        attributes: [
+            'id',
+            'username',
+            'email',
+            'password',
+            'city',
+            'image'
+        ]
+    })
+        .then(dbUserData => {
+            if (dbUserData) {
+                const userData = dbUserData.get({ plain: true });
+
+                res.render('edit-user', {
+                    userData,
+                    userId: req.session.user_id,
+                    loggedIn: true,
+                    image: req.session.image,
+                    username: req.session.username
+                })
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+})
 
 module.exports = router;

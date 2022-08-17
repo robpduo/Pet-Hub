@@ -1,22 +1,32 @@
-
-<form class="signup-form">
-    <div>
-        <label for="username-signup">Username:</label>
-        <input type="text" id="username-signup" />
-    </div>
+<div>
+    <form class="edit-post-form">
         <div>
-        <label for="city-signup">City:</label>
-        <input type="text" id="city-signup" />
-    </div>
-    <div>
-        <label for="image-signup">Profile Picture: <span class="image-class"><br>( jpg-jpeg-png-gif )</span></label>
-        <input type="file" id="image-signup" name="image"/>
-    </div>
-    <div>
-        <button type="submit" class="update-btn">Edit</button>
-        <button type="submit" class="delete-btn">Delete Profile</button>
-    </div>
-</form>
+            <label for="image-signup">Profile Picture: <span class="image-class"><br>(
+                    jpg-jpeg-png-gif)</span></label>
+            <input type="file" id="image-signup" name="image" />
+        </div>
 
-<script src="/javascript/update-user.js"></script>
-<script src="/javascript/delete-user.js"></script>
+        <div style="display: flex; flex-direction: row">
+            <label for="user-username">Username:</label>
+            <input name="user-username" type="text" id="user-username" value="{{userData.username}}" />
+        </div>
+
+        <div style="display: flex; flex-direction: row">
+            <label for="user-email">Email:</label>
+            <input name="user-email" type="text" id="user-email" value="{{userData.email}}" />
+        </div>
+
+        <div style="display: flex; flex-direction: row">
+            <label for="user-city">City:</label>
+            <input name="user-city" type="text" id="user-city" value="{{userData.city}}" />
+        </div>
+
+        <div style="display: flex; flex-direction: row">
+            <label for="user-password">Password:</label>
+            <input name="user-password" type="text" id="user-password" />
+        </div>
+
+        <button type="submit">Update</button>
+        <button type="button" class="delete-pet-btn">Delete</button>
+    </form>
+</div>

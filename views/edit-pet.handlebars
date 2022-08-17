@@ -1,32 +1,29 @@
 <div>
     <form class="edit-post-form">
-        <div style="display: flex; flex-direction: row; justify-content: center">
-            <img src="/{{picture_url}}" width="100px" height="100px" class="profile-avatar">
-        </div>
-        <input type="file" id="image-signup" name="image" />
-
         <div style="display: flex; flex-direction: row">
-            <label for="pet-name">Pet Name:</label>
+            <label for="pet-name">Name:</label>
             <input name="pet-name" type="text" id="pet-name" value="{{petCard.name}}" />
         </div>
 
         <div style="display: flex; flex-direction: row">
-            <label for="pet-type">Pet Type:</label>
+            <label for="pet-type">Type:</label>
             <input name="pet-type" type="text" id="pet-type" value="{{petCard.pet_type}}" />
         </div>
 
         <div style="display: flex; flex-direction: row">
-            <label for="pet-age">Pet Age:</label>
+            <label for="pet-age">Age:</label>
             <input name="pet-age" type="number" id="pet-age" value="{{petCard.age}}" />
         </div>
 
         <div style="display: flex; flex-direction: row">
-            <label for="pet-gender">Pet Gender:</label>
+            <label for="pet-gender">Gender:</label>
             <select id="pet-gender" name="pet-gender">
                 <option value="F">F</option>
                 <option value="M">M</option>
             </select>
         </div>
+
+        <input type="file" id="image-signup" name="image" />
 
         <button type="submit">Update</button>
 
