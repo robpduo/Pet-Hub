@@ -1,25 +1,23 @@
-
 <h1>Places of interest for your pet!<i class="fa-solid fa-paw"></i></h1>
 <h3 class="mapdesc">Click a button to display locations</h3>
 
 <div class="map-selector">
-    <button type="submit" class="map-btns" id="store">Pet Stores</button>
-    <button type="submit" class="map-btns" id="park">Dog Parks</button>
-    <button type="submit" class="map-btns" id="veterinary_care">Vet Clinics</button>
+  <button type="submit" class="map-btns" id="store">Pet Stores</button>
+  <button type="submit" class="map-btns" id="park">Dog Parks</button>
+  <button type="submit" class="map-btns" id="veterinary_care">Vet Clinics</button>
 </div>
 
 <!-- Google map -->
 <div id="container">
-    <div id="map"></div>
-    <div id="sidebar">
-      <h2>Results<i class="fa-solid fa-map-location"></i></h2>
-      <ul id="placesList"></ul>
-      <button id="more">Load more results</button>
-    </div>
+  <div id="map"></div>
+  <div id="sidebar">
+    <h2>Results<i class="fa-solid fa-map-location"></i></h2>
+    <ul id="placesList"></ul>
+    <button id="more">Load more results</button>
   </div>
-    
-    <script type="module" src="/javascript/places.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC53rjSi9TjEJ7Re0Sy0i6tpwwDHF14qo&libraries=places&callback=initMap"
-        defer
-    ></script>
+</div>
+
+<script type="module" src="/javascript/places.js"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC53rjSi9TjEJ7Re0Sy0i6tpwwDHF14qo&libraries=places&callback=initMap"
+  defer></script>
