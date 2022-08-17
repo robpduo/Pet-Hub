@@ -27,6 +27,7 @@ router.get('/', (req, res) => {
             console.log(posts);
             res.render('homepage', {
                 posts,
+                city: posts[0].user.city,
                 userId: req.session.user_id,
                 loggedIn: req.session.loggedIn,
                 image: req.session.image
