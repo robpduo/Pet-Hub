@@ -24,11 +24,18 @@ Navigation Bar </br>
 Login Page </br>
 ![image](https://user-images.githubusercontent.com/101683611/185191762-09254714-e440-4389-ae2a-65811d61b1d9.png)
 
+Home Page </br>
+![image](https://user-images.githubusercontent.com/101683611/185192776-4237622e-7d91-4206-b69a-07d162152895.png)
+- View all registered pets within the community
+
+Dashboard </br>
+![image](https://user-images.githubusercontent.com/101683611/185192363-8dd12510-0f13-469a-8523-e3283bf58967.png)
+- View all the pets you have
+
 Pet Maps</br>
 ![image](https://user-images.githubusercontent.com/101683611/185190347-c12084cd-605f-4ea7-a6c7-e756e7da2adc.png)
 - Users can click on locations within the results side bar, and the map will center its location based on the selection
 - Users can search for Pet Stores, Dog Parks, and Vet Clinics
-
 
 ## Contributors
 
