@@ -66,7 +66,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
                     petCard,
                     userId: req.session.user_id,
                     loggedIn: true,
-                    image: req.session.image,
+                    image: "../../"+req.session.image,
                     username: req.session.username
                 });
             }
