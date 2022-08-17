@@ -4,7 +4,7 @@ function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
       center: toronto,
       zoom: 15,
-      mapId: "8d193001f940fde3",
+      mapId: "8d193001f940fde3"
     });
     // Create the places service.
     const service = new google.maps.places.PlacesService(map);

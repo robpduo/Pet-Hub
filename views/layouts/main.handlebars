@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<<<<<<< HEAD
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-=======
->>>>>>> develop
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
         rel="stylesheet">
+    {{!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> --}}
     <title>Pets</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -19,19 +16,6 @@
     <div class="wrapper">
         <header>
             <h1>
-<<<<<<< HEAD
-                <a href="/" class="home-title">Pets</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-
-                <a href="/" class="nav-title">Home</a>
-                <a href="/pets" class="nav-title">create pets</a>
-                <button id="logout" class="btn-no-style">Logout</button>
-                <a href="/dashboard" class="nav-title">
-                    <img src="{{image}}" width="30px" height="30px" class="profile-avatar">
-                </a>
-=======
                 <a class="navbar-brand" href="/">
                     <img src="/images/pethub-5.png">
                 </a>
@@ -42,16 +26,12 @@
                 <a href="/pets" class="nav-title">create pets</a>
                 <button id="logout" class="btn-no-style">Logout</button>
                 <a href="/dashboard" class="nav-title"> <img src="{{image}}" width="30px" height="30px" class="profile-avatar" ></a>
->>>>>>> develop
                 {{else}}
                 <a href="/login" class="nav-title">Login</a>
                 <a href="/signup" class="nav-title">Register</a>
                 <a href="/" class="nav-title">Home</a>
                 {{/if}}
-<<<<<<< HEAD
-                <a href="/places" id="places" class="btn-no-style nav-title">Points of Interests</a>
-=======
->>>>>>> develop
+                <a href="/places" class="nav-title">Pet Map</a>
             </nav>
         </header>
         <main>
