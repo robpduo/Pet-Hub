@@ -79,6 +79,7 @@ img {
     align-items: center;
 }
 
+
 textarea, input {
     padding: .5%;
     border-radius: 5px;
@@ -141,7 +142,6 @@ header{
     padding: 1.5%;
     font-family: "Staatliches", sans-serif;
     background-color: var(--secondary);
-    /* background-image: url('/images/paws.png'); */
     background-size: cover;
     position: -webkit-sticky;
     /* "stick" the header */
