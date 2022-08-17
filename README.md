@@ -14,22 +14,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - Allow ways for Users to interact with one another, such as host meet ups, comment on other user's dogs
 
 ## Technology
-Javascript - scripting language
+Javascript - scripting language </br>
 
-Node.js - runtime environment
+Node.js - runtime environment</br>
+- Express Module</br>
+- Sequelize Module</br>
+- DotEnv Module</br>
+- BCrypt Module</br>
+- HandleBars</br>
+- Express Sessions</br>
+- Connect Session Sequelize
+    
+MySql 2 - relational database</br>
 
-Express Module
-Sequelize Module
-DotEnv Module
-BCrypt Module
-HandleBars
-Express Sessions
-Connect Session Sequelize
-MySql 2 - relational database
-
-Heroku - app deployment
-
-JawsDB MySQL - Heroku add on
+Heroku - app deployment</br>
+- JawsDB MySQL - Heroku add on</br>
 
 ## Usages
 Navigation Bar </br>
