@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/dd1b688f4a.js" crossorigin="anonymous"></script>
-    {{!--
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> --}}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <title>Pets</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -21,9 +21,9 @@
                 <a class="navbar-brand" href="/">
                     <img src="/images/pethub-5.png">
                 </a>
-
+                
             </h1>
-
+            
             <nav>
                 {{#if loggedIn}}
                 <a href="/edit/{{userId}}" class="nav-title"> <img src="{{image}}" width="35px" height="35px"
@@ -39,7 +39,7 @@
                 <a href="/places" class="nav-title">Pet-Map</a>
                 <a href="/" class="nav-title">Home</a>
                 {{/if}}
-
+                
             </nav>
         </header>
         <main>

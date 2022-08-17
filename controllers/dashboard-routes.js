@@ -29,14 +29,14 @@ router.get('/', withAuth, (req, res) => {
         .then(dbPostData => {
             //serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', {
+            res.render('dashboard', { 
                 posts,
                 userId: req.session.user_id,
-                loggedIn: true,
+                loggedIn: true, 
                 image: req.session.image,
                 username: req.session.username,
                 user_id: req.session.user_id
-            });
+             });
         })
         .catch(err => {
             console.log(err);
@@ -56,24 +56,17 @@ router.get('/edit/:id', withAuth, (req, res) => {
             'picture_url',
             'age',
             'pet_type'
-        ],
-        include: [
-            {
-                model: User,
-                attributes: ['username', 'city']
-            }
         ]
     })
         .then(dbPostData => {
             if (dbPostData) {
                 const petCard = dbPostData.get({ plain: true });
-
+                
                 res.render('edit-pet', {
                     petCard,
-                    city: dbPostData.user.city,
                     userId: req.session.user_id,
                     loggedIn: true,
-                    image: "../../" + req.session.image,
+                    image: "../../"+req.session.image,
                     username: req.session.username
                 });
             }

@@ -7,7 +7,7 @@
 
 ## About
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+PetHub allows pet owners to showcase their beloved pets with individualized profiles. 
 
 ## Future Improvements
 - Implement a way to give directions to the user from their current location to a place of interest using the Google API
@@ -51,7 +51,7 @@ Dashboard </br>
 - View all the pets you have
 
 Pet Maps</br>
-![image](https://user-images.githubusercontent.com/101683611/185190347-c12084cd-605f-4ea7-a6c7-e756e7da2adc.png)
+![ss-places](https://user-images.githubusercontent.com/38861352/185232551-945b4bb4-9a61-4b2f-9da9-d8ff83e59a50.png)
 - Users can click on locations within the results side bar, and the map will center its location based on the selection
 - Users can search for Pet Stores, Dog Parks, and Vet Clinics
 

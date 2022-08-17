@@ -2,11 +2,15 @@
     box-sizing: border-box;
     margin: 0%;
 }
-:root {    --primary: #e2e2e2;
+
+:root {
+    --primary: #e2e2e2;
     --secondary: #f3f7f8;
     --tertiary: white;
 }
-body, html {
+
+body,
+html {
     height: 100%;
     padding: 0;
     margin: 0px;
@@ -31,13 +35,14 @@ a:hover {
     text-decoration: none;
     color: rgb(36, 41, 46);
     font-size: x-large;
-    margin: 0 10px ;
+    margin: 0 10px;
     /* text-shadow: 1px 1px #00cec9; */
 }
 
-.home-title{
+.home-title {
     color: black;
 }
+
 button {
     background-color: var(--primary);
     border: 0;
@@ -57,12 +62,12 @@ input[type=file]::file-selector-button {
     background-color: var(--primary);
     transition: 1s;
     font-weight: bold;
-  }
-  
-  input[type=file]::file-selector-button:hover {
+}
+
+input[type=file]::file-selector-button:hover {
     background-color: var(--primary);
     border: 2px solid #00cec9;
-  }
+}
 
 button:hover {
     background-color: rgb(114, 215, 246);
@@ -86,7 +91,8 @@ textarea, input {
     border: 1px solid #ccc;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
     outline: none;
     border: 1px solid #3486eb;
 }
@@ -96,7 +102,7 @@ textarea {
     min-height: 50px;
 }
 
-form > div {
+form>div {
     margin-bottom: 2%;
 }
 
@@ -104,7 +110,11 @@ form label {
     display: block;
 }
 
-.login-form, .signup-form, .pet-form, .new-post-form, .edit-post-form{
+.login-form,
+.signup-form,
+.pet-form,
+.new-post-form,
+.edit-post-form {
     margin: 2% 20%;
     align-content: center;
     padding: 10px;
@@ -115,11 +125,12 @@ form label {
 
 }
 
-.login-form{
+.login-form {
     margin-bottom: 3%;
 }
 
-textarea, input{
+textarea,
+input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -134,7 +145,7 @@ textarea, input{
     flex-direction: column;
 }
 
-header{
+header {
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
@@ -192,6 +203,7 @@ main {
     background: none;
     color: #85b7f4;
 }
+
 .delete-btn:hover {
     background: red;
     color: var(--tertiary);
@@ -222,7 +234,8 @@ span {
     width: 100%;
     text-align: center;
 }
-.item-title{
+
+.item-title {
     width: 100%;
 }
 
@@ -239,14 +252,14 @@ span {
 footer {
     border-top: 1px solid #ccc;
     display: flex;
-    justify-content:space-between ;
+    justify-content: space-between;
     padding: 1%;
     font-size: 110%;
     font-weight: bold;
     align-items: center;
 }
 
-.foot-note-2{
+.foot-note-2 {
     font-size: 70%;
     font-style: italic;
 }
@@ -259,27 +272,38 @@ footer {
     height: 100%;
     box-sizing: border-box;
     overflow: auto;
-  }
-  
-  #map {
+}
+
+#map-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#map {
     height: 600px;
-    width: 100%;
-  }
-  
-  #sidebar {
+    width: 75%;
+}
+
+#map img {
+    border-radius: 0;
+}
+
+#sidebar {
     display: flex;
     flex-direction: column;
-  }
+    height: 600px;
+    width: 20%;
+}
 
-  #placesList {
+#placesList {
     list-style-type: none;
     padding: 0;
     margin: 0;
     overflow-y: scroll;
     flex-grow: 1;
-  }
-  
-  #placesList li {
+}
+
+#placesList li {
     background-color: #f1f1f1;
     padding: 5px;
     text-overflow: ellipsis;
@@ -287,33 +311,32 @@ footer {
     overflow: hidden;
     font-size: 1.25rem;
     cursor: pointer;
-  }
-  
-  #more {
+}
+
+#more {
     background-color: #f1f1f1;
     padding: 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 1.25rem;
     cursor: pointer;
-  }
+}
 
-  .mapdesc {
+.mapdesc {
     font-size: 1rem;
     margin-top: 10px;
-  }
+}
 
-  .map-btns {
+.map-btns {
     border: #333 solid;
     margin: 10px 0 10px 0;
     font-size: 1.2rem;
     color: #246fcb;
     border-radius: 15px;
     background-color: rgb(238, 230, 230);
-  }
+}
 
-  i {
+i {
     margin-left: 5px;
     color: #246fcb;
-  }
-  
+}

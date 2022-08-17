@@ -45,4 +45,3 @@ router.get("/:city", withAuth, (req, res) => {
 });
 
 module.exports = router;
-

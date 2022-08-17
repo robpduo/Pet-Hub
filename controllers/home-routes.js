@@ -5,7 +5,7 @@ const { User, Pet } = require('../models');
 const withAuth = require('../utils/auth');
 
 //send response using render to use a template engine
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
     Pet.findAll({
         attributes: [
             'id',
@@ -24,7 +24,7 @@ router.get('/', withAuth, (req, res) => {
         .then(dbPostData => {
             //serialize the object down to only the properties you need .get({ plain: true}))
             const posts = dbPostData.map(post => post.get({ plain: true }));
-
+            console.log(posts);
             res.render('homepage', {
                 posts,
                 city: posts[0].user.city,
@@ -32,8 +32,6 @@ router.get('/', withAuth, (req, res) => {
                 loggedIn: req.session.loggedIn,
                 image: req.session.image
             });
-
-
         })
         .catch(err => {
             console.log(err);
@@ -64,7 +62,6 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-//login route
 router.get('/pets', withAuth, (req, res) => {
     //if login redirect to a specific page
     if (!req.session.loggedIn) {
@@ -81,7 +78,7 @@ router.get('/pets', withAuth, (req, res) => {
         }
     })
         .then(dbUserData => {
-            
+
             console.log(JSON.stringify(dbUserData));
 
             res.render('pets-create', {

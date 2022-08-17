@@ -19,6 +19,8 @@ function initMap(types) {
     };
   
     // Perform a nearby search.
+    const userCity = window.location.pathname.split("/");
+
     service.nearbySearch(
       { location: toronto, radius: 3000, type: types, keyword: "pet" },
       (results, status, pagination) => {
@@ -42,7 +44,12 @@ function initMap(types) {
     for (const place of places) {
       if (place.geometry && place.geometry.location) {
         const image = {
-          url: place.icon,
+          path: "M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z",
+          fillOpacity: 1,
+          fillColor: "#000000",
+          strokeWeight: 1,
+          strokeColor: "#ffffff",
+          scale: 1.5,
           size: new google.maps.Size(71, 71),
           origin: new google.maps.Point(0, 0),
           anchor: new google.maps.Point(17, 34),
