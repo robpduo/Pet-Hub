@@ -9,6 +9,9 @@
 
 PetHub allows pet owners to showcase their beloved pets with individualized profiles. 
 
+## Deployed Application
+Heroku: https://pets-projects.herokuapp.com/</br>
+
 ## Future Improvements
 - Implement a way to give directions to the user from their current location to a place of interest using the Google API
 - Allow ways for Users to interact with one another, such as host meet ups, comment on other user's dogs
@@ -62,6 +65,4 @@ Pet Maps</br>
 * Rebeca
 * Leo
 
-## Links
 
-Heroku: https://pets-projects.herokuapp.com/
