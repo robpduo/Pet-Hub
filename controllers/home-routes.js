@@ -62,13 +62,14 @@ router.get('/signup', (req, res) => {
 });
 
 //login route
-router.get('/pets', (req, res) => {
+router.get('/pets', withAuth, (req, res) => {
     //if login redirect to a specific page
     if (!req.session.loggedIn) {
         res.redirect('/login')
         return;
     }
     res.render('pets-create', {
+        userId: req.session.user_id,
         loggedIn: req.session.loggedIn,
         image: req.session.image
     });
@@ -94,6 +95,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
                 res.render('edit-user', {
                     userData,
+                    userId: req.session.user_id,
                     loggedIn: true,
                     image: req.session.image,
                     username: req.session.username
