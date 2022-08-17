@@ -243,3 +243,41 @@ footer {
     font-size: 70%;
     font-style: italic;
 }
+
+#sidebar {
+    flex-basis: 5rem;
+    flex-grow: 1;
+    padding: 1rem;
+    max-width: 30rem;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+  
+  #map {
+    height: 600px;
+    width: 100%;
+  }
+  
+  #sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #placesList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    flex-grow: 1;
+  }
+  
+  #more {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  
