@@ -31,7 +31,6 @@ router.get('/', withAuth, (req, res) => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
             res.render('dashboard', { 
                 posts,
-                city: posts[0].user.city,
                 userId: req.session.user_id,
                 loggedIn: true, 
                 image: req.session.image,
@@ -65,7 +64,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
                 
                 res.render('edit-pet', {
                     petCard,
-                    city: dbPostData.user.city,
                     userId: req.session.user_id,
                     loggedIn: true,
                     image: "../../"+req.session.image,

@@ -26,16 +26,17 @@
             
             <nav>
                 {{#if loggedIn}}
-                <a href="/edit/{{userId}}" class="nav-title"> <img src="{{image}}" width="30px" height="30px" class="profile-avatar" ></a>
+                <a href="/edit/{{userId}}" class="nav-title"> <img src="{{image}}" width="35px" height="35px"
+                        class="profile-avatar" title="Edit Profile"></a>
                 <a href="/dashboard" class="nav-title">Dashboard</a>
                 <a href="/pets" class="nav-title">create pets</a>
-                <a href="/places/{{city}}" class="nav-title">Pet Map</a>
+                <a href="/places/{{city}}" class="nav-title">Pet-Map</a>
                 <button id="logout" class="btn-no-style">Logout</button>
 
                 {{else}}
                 <a href="/login" class="nav-title">Login</a>
                 <a href="/signup" class="nav-title">Register</a>
-                <a href="/places" class="nav-title">Pet Map</a>
+                <a href="/places" class="nav-title">Pet-Map</a>
                 <a href="/" class="nav-title">Home</a>
                 {{/if}}
                 

@@ -84,8 +84,8 @@ img {
     align-items: center;
 }
 
-textarea,
-input {
+
+textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -153,7 +153,6 @@ header {
     padding: 1.5%;
     font-family: "Staatliches", sans-serif;
     background-color: var(--secondary);
-    /* background-image: url('/images/paws.png'); */
     background-size: cover;
     position: -webkit-sticky;
     /* "stick" the header */
@@ -162,6 +161,12 @@ header {
     background-position: 80%;
     /*keep this element on top of all the other ones */
     z-index: 9999;
+}
+
+.edit-pet-link{
+    color: rgb(78, 77, 77);
+    font-size: large;
+    font-weight: bold;
 }
 
 /*linear-gradient(to bottom right, rgb(147, 147, 248) , black);*/

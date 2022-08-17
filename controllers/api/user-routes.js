@@ -68,15 +68,12 @@ router.get('/:id', (req, res) => {
 router.put('/:id', upload.single('image'), (req, res) => {
     User.update({
         username:req.body.username,
-        email: req.body.email,
         city: req.body.city,
         image: req.file.path
     },
     {
-        //adding bcrypt hook to hash password when updated
-        individualHooks: true,
         where: {
-            id: req.params.id
+            id: req.session.user_id 
         }
     })
         .then(dbUserData => {
@@ -84,7 +81,10 @@ router.put('/:id', upload.single('image'), (req, res) => {
                 res.status(404).json({message: 'No user found with this id' });
                 return;
             }
-            res.json(dbUserData);
+            req.session.regenerate(() => {
+                res.json(dbUserData);
+            })
+            
         }).catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -103,7 +103,10 @@ router.delete('/:id',  (req, res) => {
                 res.status(404).json({message: 'No user found with this id'});
                 return;
             }
-            res.json(dbUserData);
+            req.session.destroy(() => {
+                res.json(dbUserData);
+            })
+
         })
         .catch(err => {
             console.log(err);
@@ -135,9 +138,6 @@ router.post('/login',  (req, res) => {
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
             req.session.image = dbUserData.image;;
-            console.log(dbUserData.image)
-            console.log(req.session.image)
-            
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
     })
