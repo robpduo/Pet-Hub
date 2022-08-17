@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/dd1b688f4a.js" crossorigin="anonymous"></script>
-    {{!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> --}}
+    {{!--
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> --}}
     <title>Pets</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -20,15 +21,16 @@
                 <a class="navbar-brand" href="/">
                     <img src="/images/pethub-5.png">
                 </a>
-                
+
             </h1>
-            
+
             <nav>
                 {{#if loggedIn}}
-                <a href="/edit/{{userId}}" class="nav-title"> <img src="{{image}}" width="30px" height="30px" class="profile-avatar" ></a>
+                <a href="/edit/{{userId}}" class="nav-title"> <img src="{{image}}" width="30px" height="30px"
+                        class="profile-avatar"></a>
                 <a href="/dashboard" class="nav-title">Dashboard</a>
                 <a href="/pets" class="nav-title">create pets</a>
-                <a href="/places" class="nav-title">Pet Map</a>
+                <a href="/places/{{city}}" class="nav-title">Pet Map</a>
                 <button id="logout" class="btn-no-style">Logout</button>
 
                 {{else}}
@@ -37,7 +39,7 @@
                 <a href="/places" class="nav-title">Pet Map</a>
                 <a href="/" class="nav-title">Home</a>
                 {{/if}}
-                
+
             </nav>
         </header>
         <main>

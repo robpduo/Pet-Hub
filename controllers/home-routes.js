@@ -5,7 +5,7 @@ const { User, Pet } = require('../models');
 const withAuth = require('../utils/auth');
 
 //send response using render to use a template engine
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Pet.findAll({
         attributes: [
             'id',
@@ -24,13 +24,16 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             //serialize the object down to only the properties you need .get({ plain: true}))
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            console.log(posts);
+
             res.render('homepage', {
                 posts,
+                city: posts[0].user.city,
                 userId: req.session.user_id,
                 loggedIn: req.session.loggedIn,
                 image: req.session.image
             });
+
+
         })
         .catch(err => {
             console.log(err);
@@ -68,11 +71,26 @@ router.get('/pets', withAuth, (req, res) => {
         res.redirect('/login')
         return;
     }
-    res.render('pets-create', {
-        userId: req.session.user_id,
-        loggedIn: req.session.loggedIn,
-        image: req.session.image
-    });
+    User.findAll({
+        attributes: [
+            'id',
+            'city'
+        ],
+        where: {
+            id: req.session.user_id
+        }
+    })
+        .then(dbUserData => {
+            
+            console.log(JSON.stringify(dbUserData));
+
+            res.render('pets-create', {
+                city: JSON.stringify(dbUserData).split(":")[2].split("\"")[1],
+                userId: req.session.user_id,
+                loggedIn: req.session.loggedIn,
+                image: req.session.image
+            });
+        })
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
@@ -97,7 +115,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
                     userData,
                     userId: req.session.user_id,
                     loggedIn: true,
-                    image: req.session.image,
+                    image: "../" + req.session.image,
                     username: req.session.username
                 })
             }
