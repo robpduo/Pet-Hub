@@ -62,18 +62,32 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-//login route
 router.get('/pets', withAuth, (req, res) => {
     //if login redirect to a specific page
     if (!req.session.loggedIn) {
         res.redirect('/login')
         return;
     }
-    res.render('pets-create', {
-        userId: req.session.user_id,
-        loggedIn: req.session.loggedIn,
-        image: req.session.image
-    });
+    User.findAll({
+        attributes: [
+            'id',
+            'city'
+        ],
+        where: {
+            id: req.session.user_id
+        }
+    })
+        .then(dbUserData => {
+
+            console.log(JSON.stringify(dbUserData));
+
+            res.render('pets-create', {
+                city: JSON.stringify(dbUserData).split(":")[2].split("\"")[1],
+                userId: req.session.user_id,
+                loggedIn: req.session.loggedIn,
+                image: req.session.image
+            });
+        })
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
@@ -98,7 +112,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
                     userData,
                     userId: req.session.user_id,
                     loggedIn: true,
-                    image: "../"+req.session.image,
+                    image: "../" + req.session.image,
                     username: req.session.username
                 })
             }
