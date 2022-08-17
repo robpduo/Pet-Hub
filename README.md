@@ -9,16 +9,23 @@
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-## Credit
+## Future Improvements
+- Implement a way to give directions to the user from their current location to a place of interest using the Google API
+- Allow ways for Users to interact with one another, such as host meet ups, comment on other user's dogs
+
+## Usages
+Pet Maps</br>
+![image](https://user-images.githubusercontent.com/101683611/185190347-c12084cd-605f-4ea7-a6c7-e756e7da2adc.png)
+- Users can click on locations within the results side bar, and the map will center its location based on the selection
+- Users can search for Pet Stores, Dog Parks, and Vet Clinics
+
+
+## Contributors
 
 * Rob
 * Ryan
 * Rebeca
 * Leo
-
-## Development
-
-`npm i bcrypt connect-session-sequelize dotenv express express-handlebars express-session multer mysql2 sequelize`
 
 ## Links
 
