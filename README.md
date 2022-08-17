@@ -24,6 +24,7 @@ Node.js - runtime environment</br>
 - HandleBars</br>
 - Express Sessions</br>
 - Connect Session Sequelize
+- Multer
     
 MySql 2 - relational database</br>
 
