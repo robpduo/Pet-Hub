@@ -1,4 +1,11 @@
-## Project 2
+<h1 align="center">
+  <br>
+  <a href="" rel="noopener">
+  <img src="public/images/pethub-wb-33.png"></a>
+  <br>
+</h1>
+
+## Credit
 
 * Rob
 * Ryan
