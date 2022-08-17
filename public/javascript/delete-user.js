@@ -1,18 +1,18 @@
-async function deletePetHandler(event) {
+async function deleteUserHandler(event) {
     event.preventDefault();
   
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
-    const response = await fetch(`/api/pets/${id}`, {
+    const response = await fetch(`/api/users/${id}`, {
         method: 'DELETE'
     });
   
     if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/');
     } else {
         alert(response.statusText);
     }
 }
 
-document.querySelector('.delete-btn').addEventListener('click', deletePetHandler);
+document.querySelector('.delete-btn').addEventListener('click', deleteUserHandler);
