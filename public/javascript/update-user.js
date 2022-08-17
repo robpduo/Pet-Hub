@@ -2,15 +2,11 @@ async function updateUserHandler(event) {
     event.preventDefault();
 
     const username = document.querySelector('#user-username').value.trim();
-    const email = document.querySelector('#user-email').value.trim();
     const city = document.querySelector('#user-city').value.trim();
-    const password = document.querySelector('#user-password').value.trim();
 
     const formData = new FormData();
     const image = document.querySelector('input[type="file"]');
     formData.append('username', username);
-    formData.append('password', password);
-    formData.append('email', email);
     formData.append('city', city);
     formData.append('image', image.files[0]);
 

@@ -151,6 +151,13 @@ header{
     /*keep this element on top of all the other ones */
     z-index: 9999;
 }
+
+.edit-pet-link{
+    color: rgb(78, 77, 77);
+    font-size: large;
+    font-weight: bold;
+}
+
 /*linear-gradient(to bottom right, rgb(147, 147, 248) , black);*/
 header h1 {
     font-size: 1.3em;
