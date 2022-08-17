@@ -21,7 +21,7 @@ async function updatePetFormHandler(event) {
     const response = await fetch(`/api/pets/${id}`, {
         method: 'PUT',
         body: formData
-    })
+    });
 
     if (response.ok) {
         document.location.replace('/Dashboard');

@@ -19,6 +19,8 @@ function initMap(types) {
     };
   
     // Perform a nearby search.
+    const userCity = window.location.pathname.split("/");
+
     service.nearbySearch(
       { location: toronto, radius: 3000, type: types, keyword: "pet" },
       (results, status, pagination) => {
