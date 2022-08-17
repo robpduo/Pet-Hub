@@ -1,11 +1,18 @@
 
-    <h1>PetMap!</h1>
+<h1>Places of interest for your pet!<i class="fa-solid fa-paw"></i></h1>
+<h3 class="mapdesc">Click a button to display locations</h3>
+
+<div class="map-selector">
+    <button type="submit" class="map-btns" id="store">Pet Stores</button>
+    <button type="submit" class="map-btns" id="park">Dog Parks</button>
+    <button type="submit" class="map-btns" id="veterinary_care">Vet Clinics</button>
+</div>
 
 <!-- Google map -->
 <div id="container">
     <div id="map"></div>
     <div id="sidebar">
-      <h2>Results</h2>
+      <h2>Results<i class="fa-solid fa-map-location"></i></h2>
       <ul id="placesList"></ul>
       <button id="more">Load more results</button>
     </div>
