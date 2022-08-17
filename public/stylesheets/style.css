@@ -279,6 +279,10 @@ footer {
     width: 75%;
 }
 
+#map img {
+    border-radius: 0;
+}
+
 #sidebar {
     display: flex;
     flex-direction: column;
