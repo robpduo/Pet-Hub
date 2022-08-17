@@ -77,36 +77,4 @@ router.get('/edit/:id', withAuth, (req, res) => {
         })
 })
 
-//edit user
-router.get('/edituser/:id', withAuth, (req, res) => {
-    User.findByPk(req.params.id, {
-        where: {
-            user_id: req.session.user_id
-        },
-        attributes: [
-            'username',
-            'city',
-            'image'
-        ]
-    })
-        .then(dbPostData => {
-            if (dbPostData) {
-                const userDetails = dbPostData.get({ plain: true });
-           
-                res.render('edit-user', {
-                    userDetails,
-                    loggedIn: true,
-                    image: req.session.image,
-                    username: req.session.username,
-                    user_id: req.session.user_id
-                    
-                });
-            }
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        })
-})
-
 module.exports = router;
