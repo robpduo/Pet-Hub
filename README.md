@@ -24,7 +24,7 @@ Node.js - runtime environment</br>
 - HandleBars</br>
 - Express Sessions</br>
 - Connect Session Sequelize
-- Multer
+- Multer - used to manage file uploads
     
 MySql 2 - relational database</br>
 
