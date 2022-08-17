@@ -1,48 +1,32 @@
 const router = require('express').Router();
-const { User } = require('../models');
-const withAuth = require('../utils/auth');
+// var request = require('request');
 
 
-router.get("/", withAuth, (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login')
-        return;
-    }
+// router.get('/', function(req, res, next) {
+//   request({
+//     uri: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBC53rjSi9TjEJ7Re0Sy0i6tpwwDHF14qo&libraries=places&callback=initMap',
+//     // qs: {
+//     //   api_key: '123456',
+//     //   query: 'World of Warcraft: Legion'
+//     // },
+//     function(error, response, body) {
+//       if (!error && response.statusCode === 200) {
+//         console.log(body)
+//       }
+//     }
+//   });
+// });
 
-    User.findAll({
-        attributes: [
-            'id',
-            'city'
-        ],
-    })
-        .then(dbUserData => {
-            res.render("places", {
-                dbUserData,
-                userId: req.session.user_id,
-                loggedIn: req.session.loggedIn,
-                image: "../" + req.session.image
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+
+router.get("/", (req, res) => {
+    // request.get("https://maps.googleapis.com/maps/api/js?key=AIzaSyBC53rjSi9TjEJ7Re0Sy0i6tpwwDHF14qo&libraries=places&callback=initMap", (err, response, body) => {
+    //     if (err) {
+    //         return next(err);
+    //     }
+        res.render("places");
+        // {data: JSON.parse()});
+    
 });
 
-router.get("/:city", withAuth, (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login')
-        return;
-    }
-
-    res.render("places", {
-        city: req.params.city,
-        userId: req.session.user_id,
-        loggedIn: req.session.loggedIn,
-        image: "../" + req.session.image
-    });
-
-});
-
-module.exports = router;
+module.exports = router; 
 
