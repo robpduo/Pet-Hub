@@ -185,7 +185,7 @@ main {
     background: none;
     color: #85b7f4;
 }
-.delete-pet-btn:hover {
+.delete-btn:hover {
     background: red;
     color: var(--tertiary);
 }

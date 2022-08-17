@@ -69,7 +69,6 @@ router.put('/:id', upload.single('image'), (req, res) => {
     User.update({
         username:req.body.username,
         email: req.body.email,
-        password: req.body.password,
         city: req.body.city,
         image: req.file.path
     },
