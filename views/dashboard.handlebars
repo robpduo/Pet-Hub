@@ -1,0 +1,15 @@
+<ol class="item-list">
+    <h2>{{pascal_case username}} {{format_plural 'pet' posts.length}}</h2>
+    {{#each posts as |post|}}
+    <li>
+        <article class="item">
+            <div class="item-section">
+                <div class="item-content">
+                    {{> pet-info post}}
+                    <a href="/dashboard/edit/{{post.id}}" class="edit-pet-link">Edit</a>
+                </div>
+            </div>
+        </article>
+    </li>
+    {{/each}}
+</ol>

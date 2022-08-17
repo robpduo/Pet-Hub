@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dd1b688f4a.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <title>Pets</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a class="navbar-brand" href="/">
+                    <img src="/images/pethub-5.png">
+                </a>
+                
+            </h1>
+            
+            <nav>
+                {{#if loggedIn}}
+                <a href="/edit/{{userId}}" class="nav-title"> <img src="{{image}}" width="35px" height="35px"
+                        class="profile-avatar" title="Edit Profile"></a>
+                <a href="/dashboard" class="nav-title">Dashboard</a>
+                <a href="/pets" class="nav-title">create pets</a>
+                <a href="/places/{{city}}" class="nav-title">Pet-Map</a>
+                <button id="logout" class="btn-no-style">Logout</button>
+
+                {{else}}
+                <a href="/login" class="nav-title">Login</a>
+                <a href="/signup" class="nav-title">Register</a>
+                <a href="/places" class="nav-title">Pet-Map</a>
+                <a href="/" class="nav-title">Home</a>
+                {{/if}}
+                
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            <p>Thanks for visiting!</p>
+            <p class="foot-note-2"> &copy;2022</p>
+        </footer>
+    </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
