@@ -5,7 +5,8 @@ const Pet = require('./Pets');
 
 //create associations
 User.hasMany(Pet, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'cascade'
 });
 
 Pet.belongsTo(User, {

@@ -31,12 +31,18 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+
 //add express static an take all of the contents of a folder and serve them as static assets
 //This is useful for front-end specific files like images, style sheets, and JavaScript files.
 app.use(express.static(path.join(__dirname, 'public')));
 
 //static avatars folder
-app.use('/avatars', express.static('./avatars'));
+app.use('/avatars', express.static('avatars'));
+//app.use(express.static(path.join(__dirname, 'avatars')));
+//app.use(express.static(path.join(__dirname, '/avatars')));
+
+
 
 // turn on routes
 app.use(routes);
@@ -52,6 +58,6 @@ app.set('view engine', 'handlebars');
 // turn on connection to db and server
 // sequelize.sync() method to establish the connection to the database
 //force: true drops all tables every time the server runs 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on PORT ${PORT}`));
 });

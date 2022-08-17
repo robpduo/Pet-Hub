@@ -1,34 +1,8 @@
 const router = require('express').Router();
 const { User, Pet } = require('../../models');
+const { upload, storage } = require('../../config/upload')
 
-//image upload
-const multer = require('multer');
-const path = require('path');
 
-//upload image
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'avatars');
-    },
-    filename: (req, file, cb) => {
-        cb(null,Date.now() + path.extname(file.originalname));
-    }
-});
-
-const upload = multer({
-    storage: storage,
-    limits: { fileSize: 1024 * 1023 *5 },
-    fileFilter: (req, file, cb) => {
-        const fileTypes = /jpg|jpeg|png|gif/;
-        const mimeType = fileTypes.test(file.mimetype);
-        const extname = fileTypes.test(path.extname(file.originalname));
-
-        if(mimeType && extname){
-            return cb(null, true);        
-        }
-        cb('Give proper files format to upload jpg|jpeg|png|gif');
-    }
-});
 
 //Post /api/users/test
 router.post('/', upload.single('image'), (req, res) => {
@@ -162,7 +136,9 @@ router.post('/login',  (req, res) => {
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
             req.session.image = dbUserData.image;;
-
+            console.log(dbUserData.image)
+            console.log(req.session.image)
+            
             res.json({ user: dbUserData, message: 'You are now logged in!' });
         });
     })
