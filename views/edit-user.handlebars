@@ -1,0 +1,24 @@
+<div>
+    <form class="edit-post-form">
+        <input type="file" id="image-signup" name="image" />
+
+        <div style="display: flex; flex-direction: row">
+            <label for="user-username">Username:</label>
+            <input name="user-username" type="text" id="user-username" value="{{name}}" />
+        </div>
+
+        <div style="display: flex; flex-direction: row">
+            <label for="user-email">Email:</label>
+            <input name="user-email" type="text" id="user-email" value="{{pet_type}}" />
+        </div>
+
+        <div style="display: flex; flex-direction: row">
+            <label for="user-password">Pet Age:</label>
+            <input name="user-password" type="number" id="user-password" value="{{age}}" />
+        </div>
+
+        <button type="submit">Update</button>
+
+        <button type="button" class="delete-pet-btn">Delete</button>
+    </form>
+</div>
