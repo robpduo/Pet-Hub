@@ -13,6 +13,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 - Implement a way to give directions to the user from their current location to a place of interest using the Google API
 - Allow ways for Users to interact with one another, such as host meet ups, comment on other user's dogs
 
+## Technology
+Javascript - scripting language
+
+Node.js - runtime environment
+
+Express Module
+Sequelize Module
+DotEnv Module
+BCrypt Module
+HandleBars
+Express Sessions
+Connect Session Sequelize
+MySql 2 - relational database
+
+Heroku - app deployment
+
+JawsDB MySQL - Heroku add on
+
 ## Usages
 Navigation Bar </br>
 ![image](https://user-images.githubusercontent.com/101683611/185191834-a10fb73f-e9dc-4489-b00e-8134233430a8.png)
